@@ -1,0 +1,16 @@
+services:
+  web:
+    build: ./Frontend
+    ports:
+      - "5173:5173"
+    networks:
+      - assessment
+  backend:
+    build: ./Backend
+    ports:
+      - "3000:3000"
+    networks:
+      - assessment
+networks:
+  assessment:
+    driver: bridge
